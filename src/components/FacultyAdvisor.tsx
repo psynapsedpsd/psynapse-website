@@ -15,7 +15,7 @@ export function FacultyAdvisor() {
     role: "Teacher Incharge",
     initial: "SA",
     tone: "ink",
-    image: "/images/leaders/samdisha-alagh.jpg",
+    image: `${import.meta.env.BASE_URL}images/leaders/samdisha-alagh.jpg`,
     bio: "Guiding PSYNAPSE with thoughtful mentorship, academic care, and an open invitation to stay curious about the human mind.",
   };
 
