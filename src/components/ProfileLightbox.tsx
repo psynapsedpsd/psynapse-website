@@ -75,16 +75,14 @@ export function PortraitFrame({
       style={{ background: tone.background }}
     >
       {profile.image && (
-        <img
-          src={
-  profile.image
-    ? `${import.meta.env.BASE_URL}${profile.image.replace(/^\/+/, "")}`
-    : undefined
-}
-          alt={`Portrait of ${profile.name}`}
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          style={{ objectPosition: profile.imagePosition ?? "center" }}
-        />
+        
+<img
+  src={profile.image}
+  alt={`Portrait of ${profile.name}`}
+  className="absolute inset-0 z-0 h-full w-full object-cover"
+  style={{ objectPosition: profile.imagePosition ?? "center" }}
+/>
+
       )}
       <div className="pointer-events-none absolute -bottom-5 left-[12%] right-[12%] h-8 rounded-full bg-foreground/20 blur-xl transition-all duration-500 group-hover/frame:bottom-[-1.25rem] group-hover/frame:opacity-80 group-active/frame:bottom-[-0.75rem] group-active/frame:opacity-50" />
       <div className="absolute inset-3 rounded-[2rem_2rem_1rem_1rem] border border-white/30 transition-all duration-500 group-hover/frame:inset-2 group-hover/frame:border-white/50" />
