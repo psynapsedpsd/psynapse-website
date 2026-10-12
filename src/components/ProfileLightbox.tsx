@@ -76,7 +76,11 @@ export function PortraitFrame({
     >
       {profile.image && (
         <img
-          src={profile.image}
+          src={
+  profile.image
+    ? `${import.meta.env.BASE_URL}${profile.image.replace(/^\/+/, "")}`
+    : undefined
+}
           alt={`Portrait of ${profile.name}`}
           className="absolute inset-0 z-0 h-full w-full object-cover"
           style={{ objectPosition: profile.imagePosition ?? "center" }}
