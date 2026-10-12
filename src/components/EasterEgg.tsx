@@ -280,7 +280,7 @@ export function EasterEgg() {
                 }}
               >
                 {activeSecret === "nikhil"
-                  ? "I'd rather walk away with my crown than stay and live by the flock's rules"
+                  ? "I'd rather walk away with my crown than surrender my throne to the rules of the crowd."
                   : "You found it."}
               </motion.h2>
 
@@ -291,7 +291,7 @@ export function EasterEgg() {
                 transition={{ delay: 0.7 }}
               >
                 {activeSecret === "nikhil"
-                  ? "THE PRESIDENT"
+                  ? "THE PRESIDNET"
                   : '"The mind is not a vessel to be filled, but a fire to be kindled."'}
               </motion.p>
 
