@@ -25,10 +25,10 @@ const currentTeam: Profile[] = [
     tone: "indigo",
     image: `${import.meta.env.BASE_URL}images/leaders/sanchi ji .jpeg`,
     imagePosition: "center 30%",
-    bio: "Driving research initiatives and inter-school psychology programs.",
+    bio: "Shaping PSYNAPSE’s vision through collaborative leadership, a passion for psychology, and a commitment to building a thriving community of curious minds.",
   },
   {
-    name: "Aditi Vashisht",
+    name: "Aditi Vashisth",
     role: "Vice President",
     initial: "AV",
     tone: "ochre",
@@ -45,7 +45,7 @@ const pastPresidents: Profile[] = [
     initial: "JS",
     tone: "sage",
     image: `${import.meta.env.BASE_URL}images/leaders/jenya-suri.jpg`,
-    bio: "Established the club's core research framework and digital presence.",
+    bio: "Strengthened PSYNAPSE's research culture and helped shape its digital identity.",
   },
   {
     name: "Avni Nischal",
@@ -54,7 +54,7 @@ const pastPresidents: Profile[] = [
     initial: "AN",
     tone: "plum",
     image: `${import.meta.env.BASE_URL}images/leaders/avni-nischal.jpg`,
-    bio: "Founded PSYNAPSE and built its foundational community of 80+ members.",
+   bio: "Played a key role in nurturing PSYNAPSE's community and shaping the club's growing legacy.",
   },
 {
     name: "Dhruvika Sehrawat",
@@ -63,8 +63,7 @@ const pastPresidents: Profile[] = [
     initial: "DS",
     tone: "crimson",
     image: `${import.meta.env.BASE_URL}images/leaders/dhruvika-sehrawat.jpg`,
-    bio: "Founder of PSYNAPSE, whose vision and initiative laid the foundation for the club and its psychology-focused community.",
-  },
+    bio: "Envisioned and founded PSYNAPSE, creating the beginnings of a community built around psychology, curiosity, and research.",
 ];
 type DirectoryMember = {
   name: string;
@@ -78,7 +77,7 @@ const memberDirectory: DirectoryMember[] = [
   { name: "Aditi Vashisht", role: "Vice President", group: "Class XII" },
   { name: "Arshia Guleria", role: "Secretary", group: "Class XII" },
   { name: "Anushka Nandini", role: "Secretary", group: "Class XII" },
-  { name: "Preet Sachdeva", role: "Joint Secretary", group: "Class XII" },
+  { name: "Preet Sachdev", role: "Joint Secretary", group: "Class XII" },
   { name: "Akriti Yadav", role: "Joint Secretary", group: "Class XII" },
   { name: "Niharika Dutta", role: "Event Head", group: "Class XII" },
   { name: "Sana Verma", role: "Co-Event Head", group: "Class XI · E" },
@@ -246,7 +245,7 @@ useEffect(() => {
             <div className="h-px flex-1 bg-border" />
           </div>
 
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-4 md:grid-cols-2">
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 md:grid-cols-3">
             {pastPresidents.map((pp, idx) => (
               <motion.button
                 key={pp.name}
