@@ -64,7 +64,8 @@ const pastPresidents: Profile[] = [
     tone: "crimson",
     image: `${import.meta.env.BASE_URL}images/leaders/dhruvika-sehrawat.jpg`,
     bio: "Envisioned and founded PSYNAPSE, creating the beginnings of a community built around psychology, curiosity, and research.",
-];
+},
+  ];
 type DirectoryMember = {
   name: string;
   role: string;
