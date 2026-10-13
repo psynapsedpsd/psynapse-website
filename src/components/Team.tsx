@@ -56,8 +56,16 @@ const pastPresidents: Profile[] = [
     image: `${import.meta.env.BASE_URL}images/leaders/avni-nischal.jpg`,
     bio: "Founded PSYNAPSE and built its foundational community of 80+ members.",
   },
+{
+    name: "Dhruvika Sehrawat",
+    role: "Past President",
+    year: "2022–2023",
+    initial: "DS",
+    tone: "crimson",
+    image: `${import.meta.env.BASE_URL}images/leaders/dhruvika-sehrawat.jpg`,
+    bio: "Founder of PSYNAPSE, whose vision and initiative laid the foundation for the club and its psychology-focused community.",
+  },
 ];
-
 type DirectoryMember = {
   name: string;
   role: string;
