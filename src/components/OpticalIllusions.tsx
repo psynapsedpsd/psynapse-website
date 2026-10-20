@@ -36,68 +36,47 @@ function MullerLyer() {
 }
 
 
+
 function KanizsaTriangle() {
   return (
     <svg
-      viewBox="0 0 200 180"
+      viewBox="0 0 220 180"
       className="w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="Kanizsa triangle optical illusion"
     >
-      <rect width="200" height="180" fill="#111111" />
-
-      {/* Three white disks with triangular wedges removed */}
-      <defs>
-        <mask id="kanizsa-cutouts">
-          <rect width="200" height="180" fill="white" />
-
-          {/* Top wedge faces downward */}
-          <path
-            d="M100 28 L82 59 L118 59 Z"
-            fill="black"
-          />
-
-          {/* Bottom-left wedge faces upper-right */}
-          <path
-            d="M45 145 L79 145 L62 115 Z"
-            fill="black"
-          />
-
-          {/* Bottom-right wedge faces upper-left */}
-          <path
-            d="M155 145 L121 145 L138 115 Z"
-            fill="black"
-          />
-        </mask>
-      </defs>
-
-      <g mask="url(#kanizsa-cutouts)">
-        <circle cx="100" cy="35" r="20" fill="#f5f0e7" />
-        <circle cx="48" cy="140" r="20" fill="#f5f0e7" />
-        <circle cx="152" cy="140" r="20" fill="#f5f0e7" />
-      </g>
-
-      {/* The perceived triangle: no outline is drawn */}
-      <path
-        d="M100 48 L62 117 L138 117 Z"
-        fill="#f5f0e7"
-        opacity="0.13"
+      {/* Soft cream background */}
+      <rect
+        width="220"
+        height="180"
+        rx="12"
+        fill="#f7f6f2"
       />
 
-      <text
-        x="100"
-        y="171"
-        textAnchor="middle"
-        fill="#f5f0e7"
-        fontSize="8"
-        opacity="0.55"
-      >
-        Your brain completes the missing edges
-      </text>
+      {/* Top Pac-Man: opening faces downward */}
+      <path
+        d="M 110 34 L 91 67 A 38 38 0 1 1 129 67 Z"
+        fill="#111111"
+      />
+
+      {/* Bottom-left Pac-Man: opening faces upper-right */}
+      <path
+        d="M 36 142 L 74 142 A 29 29 0 1 1 55 109 Z"
+        fill="#111111"
+      />
+
+      {/* Bottom-right Pac-Man: opening faces upper-left */}
+      <path
+        d="M 184 142 L 146 142 A 29 29 0 1 0 165 109 Z"
+        fill="#111111"
+      />
+
+      {/* The perceived triangle remains unfilled and undrawn */}
     </svg>
   );
 }
+
 
 
 function HermannGrid() {
@@ -138,105 +117,65 @@ function EbbinghausIllusion() {
 }
 
 
+
 function RubinsVase() {
   return (
     <svg
-      viewBox="0 0 200 200"
+      viewBox="0 0 160 180"
       className="w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Rubin's vase optical illusion"
+      aria-label="Rubin's vase: a vase or two facing profiles"
     >
-      <rect width="200" height="200" fill="#1c1917" />
+      {/* Black background forms the two faces */}
+      <rect width="160" height="180" fill="#000000" />
 
-      {/* Central white vase */}
+      {/* One smooth, symmetrical vase silhouette */}
       <path
         d="
-          M78 24
-          C78 36 86 43 91 54
-          C96 66 96 76 89 87
-          C82 99 76 111 76 128
-          C76 149 85 166 100 172
-          C115 166 124 149 124 128
-          C124 111 118 99 111 87
-          C104 76 104 66 109 54
-          C114 43 122 36 122 24
+          M 59 12
+          C 51 12, 39 14, 32 22
+          C 43 27, 49 36, 51 47
+          C 53 57, 58 63, 66 68
+          C 71 72, 74 76, 75 80
+
+          L 73 83
+          C 69 85, 64 86, 61 89
+          L 66 92
+          L 72 93
+          L 68 97
+          C 71 100, 74 101, 75 105
+
+          C 73 113, 67 117, 60 123
+          C 55 129, 53 137, 51 145
+          C 49 156, 42 164, 32 168
+          C 39 176, 51 177, 59 177
+
+          L 101 177
+          C 109 177, 121 176, 128 168
+          C 118 164, 111 156, 109 145
+          C 107 137, 105 129, 100 123
+          C 93 117, 87 113, 85 105
+
+          C 86 101, 89 100, 92 97
+          L 88 93
+          L 94 92
+          L 99 89
+          C 96 86, 91 85, 87 83
+          L 85 80
+
+          C 86 76, 89 72, 94 68
+          C 102 63, 107 57, 109 47
+          C 111 36, 117 27, 128 22
+          C 121 14, 109 12, 101 12
           Z
         "
-        fill="#f5f0e7"
+        fill="#f1e7b5"
       />
-
-      {/* Left profile silhouette */}
-      <path
-        d="
-          M0 24
-          L78 24
-          C78 36 86 43 91 54
-          C86 59 80 61 74 62
-          L69 69
-          L76 74
-          L68 80
-          L73 86
-          C70 96 62 102 54 108
-          C47 115 43 125 44 137
-          C45 151 53 164 66 174
-          L0 174
-          Z
-        "
-        fill="#1c1917"
-      />
-
-      {/* Right profile silhouette */}
-      <path
-        d="
-          M200 24
-          L122 24
-          C122 36 114 43 109 54
-          C114 59 120 61 126 62
-          L131 69
-          L124 74
-          L132 80
-          L127 86
-          C130 96 138 102 146 108
-          C153 115 157 125 156 137
-          C155 151 147 164 134 174
-          L200 174
-          Z
-        "
-        fill="#1c1917"
-      />
-
-      {/* Keep the vase's central silhouette clearly defined */}
-      <path
-        d="
-          M78 24
-          C78 36 86 43 91 54
-          C96 66 96 76 89 87
-          C82 99 76 111 76 128
-          C76 149 85 166 100 172
-          C115 166 124 149 124 128
-          C124 111 118 99 111 87
-          C104 76 104 66 109 54
-          C114 43 122 36 122 24
-        "
-        fill="none"
-        stroke="#f5f0e7"
-        strokeWidth="1"
-      />
-
-      <text
-        x="100"
-        y="190"
-        textAnchor="middle"
-        fill="#f5f0e7"
-        fontSize="9"
-        opacity="0.65"
-      >
-        Vase or two faces?
-      </text>
     </svg>
   );
 }
+
 
 
 function CafeWall() {
