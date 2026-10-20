@@ -37,45 +37,45 @@ function MullerLyer() {
 
 
 
+
 function KanizsaTriangle() {
+  const cream = "#f1e7c8";
+
   return (
     <svg
-      viewBox="0 0 220 180"
+      viewBox="0 0 200 180"
       className="w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
       aria-label="Kanizsa triangle optical illusion"
     >
-      {/* Soft cream background */}
-      <rect
-        width="220"
-        height="180"
-        rx="12"
-        fill="#f7f6f2"
-      />
+      {/* Pure black background */}
+      <rect width="200" height="180" fill="#080808" />
 
-      {/* Top Pac-Man: opening faces downward */}
+      {/* Top circle: opening points down */}
       <path
-        d="M 110 34 L 91 67 A 38 38 0 1 1 129 67 Z"
-        fill="#111111"
+        d="M 100 35 L 82 66 A 36 36 0 1 1 118 66 Z"
+        fill={cream}
+        transform="rotate(180 100 35)"
       />
 
-      {/* Bottom-left Pac-Man: opening faces upper-right */}
+      {/* Bottom-left circle: opening points upper-right */}
       <path
-        d="M 36 142 L 74 142 A 29 29 0 1 1 55 109 Z"
-        fill="#111111"
+        d="M 48 137 L 84 137 A 36 36 0 1 1 66 106 Z"
+        fill={cream}
+        transform="rotate(-120 48 137)"
       />
 
-      {/* Bottom-right Pac-Man: opening faces upper-left */}
+      {/* Bottom-right circle: opening points upper-left */}
       <path
-        d="M 184 142 L 146 142 A 29 29 0 1 0 165 109 Z"
-        fill="#111111"
+        d="M 152 137 L 116 137 A 36 36 0 1 0 134 106 Z"
+        fill={cream}
+        transform="rotate(120 152 137)"
       />
-
-      {/* The perceived triangle remains unfilled and undrawn */}
     </svg>
   );
 }
+
 
 
 
