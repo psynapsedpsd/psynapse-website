@@ -39,6 +39,7 @@ function MullerLyer() {
 
 
 
+
 function KanizsaTriangle() {
   const cream = "#f1e7c8";
 
@@ -52,31 +53,45 @@ function KanizsaTriangle() {
     >
       <rect width="200" height="180" fill="#080808" />
 
-      {/* Top disc, open toward the centre */}
+      {/* Top disc: opening faces downward */}
       <path
-        d="M 100 35 L 82 66 A 36 36 0 1 1 118 66 Z"
+        d="M 100 28
+           A 32 32 0 1 1 99.99 28
+           L 83 57
+           L 117 57
+           Z"
         fill={cream}
-        transform="rotate(180 100 35)"
+        fillRule="evenodd"
+        transform="rotate(0 100 60)"
       />
 
-      {/* Bottom-left disc */}
+      {/* Bottom-left disc: opening faces upper-right */}
       <path
-        d="M 48 137 L 84 137 A 36 36 0 1 1 66 106 Z"
+        d="M 45 128
+           A 32 32 0 1 1 44.99 128
+           L 73 111
+           L 73 145
+           Z"
         fill={cream}
-        transform="rotate(-120 48 137)"
+        fillRule="evenodd"
+        transform="rotate(0 60 128)"
       />
 
-      {/* Bottom-right disc */}
+      {/* Bottom-right disc: opening faces upper-left */}
       <path
-        d="M 152 137 L 116 137 A 36 36 0 1 0 134 106 Z"
+        d="M 155 128
+           A 32 32 0 1 1 154.99 128
+           L 127 111
+           L 127 145
+           Z"
         fill={cream}
-        transform="rotate(120 152 137)"
+        fillRule="evenodd"
+        transform="rotate(0 140 128)"
       />
-
-      {/* No triangle outline: your brain completes it */}
     </svg>
   );
 }
+
 
 
 
@@ -121,64 +136,89 @@ function EbbinghausIllusion() {
 
 
 
-function RubinsVase() {
+
+function RubinVase() {
+  const cream = "#f1e7c8";
+
   return (
     <svg
-      viewBox="0 0 160 180"
+      viewBox="0 0 200 180"
       className="w-full h-full"
       xmlns="http://www.w3.org/2000/svg"
       role="img"
-      aria-label="Rubin's vase: a vase or two facing profiles"
+      aria-label="Rubin vase optical illusion with two facing profiles"
     >
-      {/* Black background forms the two faces */}
-      <rect width="160" height="180" fill="#000000" />
+      <rect width="200" height="180" fill="#080808" />
 
-      {/* One smooth, symmetrical vase silhouette */}
+      {/* Central vase silhouette */}
       <path
         d="
-          M 59 12
-          C 51 12, 39 14, 32 22
-          C 43 27, 49 36, 51 47
-          C 53 57, 58 63, 66 68
-          C 71 72, 74 76, 75 80
-
-          L 73 83
-          C 69 85, 64 86, 61 89
-          L 66 92
-          L 72 93
-          L 68 97
-          C 71 100, 74 101, 75 105
-
-          C 73 113, 67 117, 60 123
-          C 55 129, 53 137, 51 145
-          C 49 156, 42 164, 32 168
-          C 39 176, 51 177, 59 177
-
-          L 101 177
-          C 109 177, 121 176, 128 168
-          C 118 164, 111 156, 109 145
-          C 107 137, 105 129, 100 123
-          C 93 117, 87 113, 85 105
-
-          C 86 101, 89 100, 92 97
-          L 88 93
-          L 94 92
-          L 99 89
-          C 96 86, 91 85, 87 83
-          L 85 80
-
-          C 86 76, 89 72, 94 68
-          C 102 63, 107 57, 109 47
-          C 111 36, 117 27, 128 22
-          C 121 14, 109 12, 101 12
+          M 77 25
+          C 77 40, 75 48, 66 57
+          C 57 66, 53 76, 56 88
+          C 59 101, 69 111, 75 122
+          C 81 132, 83 143, 83 151
+          L 117 151
+          C 117 143, 119 132, 125 122
+          C 131 111, 141 101, 144 88
+          C 147 76, 143 66, 134 57
+          C 125 48, 123 40, 123 25
           Z
         "
-        fill="#f1e7b5"
+        fill={cream}
+      />
+
+      {/* Left-facing profile */}
+      <path
+        d="
+          M 0 0
+          H 77
+          C 77 13, 76 23, 72 32
+          C 68 40, 61 45, 55 50
+          L 47 55
+          L 55 60
+          L 50 65
+          L 54 69
+          C 52 76, 46 79, 39 80
+          C 30 82, 24 88, 20 96
+          C 14 108, 12 123, 10 140
+          L 0 145
+          Z
+        "
+        fill={cream}
+      />
+
+      {/* Right-facing profile */}
+      <path
+        d="
+          M 200 0
+          H 123
+          C 123 13, 124 23, 128 32
+          C 132 40, 139 45, 145 50
+          L 153 55
+          L 145 60
+          L 150 65
+          L 146 69
+          C 148 76, 154 79, 161 80
+          C 170 82, 176 88, 180 96
+          C 186 108, 188 123, 190 140
+          L 200 145
+          Z
+        "
+        fill={cream}
+      />
+
+      {/* Black separation emphasizes the vase rim */}
+      <path
+        d="M 77 25 Q 100 29 123 25"
+        fill="none"
+        stroke="#080808"
+        strokeWidth="3"
+        strokeLinecap="round"
       />
     </svg>
   );
 }
-
 
 
 function CafeWall() {
