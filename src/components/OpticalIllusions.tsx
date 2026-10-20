@@ -35,24 +35,70 @@ function MullerLyer() {
   );
 }
 
+
 function KanizsaTriangle() {
-  const r = 18;
   return (
-    <svg viewBox="0 0 200 180" className="w-full h-full">
-      {/* Three pac-man shapes */}
-      {/* Top pac-man */}
-      <path d={`M100,30 L${100 + r * Math.cos(Math.PI / 6)},${30 + r * Math.sin(Math.PI / 6)} A${r},${r} 0 1 0 ${100 + r * Math.cos(-Math.PI / 6)},${30 - r * Math.sin(-Math.PI / 6)} Z`}
-        fill="white" transform="rotate(180,100,30)" />
-      {/* Bottom-left pac-man */}
-      <path d={`M52,148 L${52 + r * Math.cos(Math.PI / 6)},${148 + r * Math.sin(Math.PI / 6)} A${r},${r} 0 1 0 ${52 + r * Math.cos(-Math.PI / 6)},${148 - r * Math.sin(-Math.PI / 6)} Z`}
-        fill="white" transform="rotate(300,52,148)" />
-      {/* Bottom-right pac-man */}
-      <path d={`M148,148 L${148 + r * Math.cos(Math.PI / 6)},${148 + r * Math.sin(Math.PI / 6)} A${r},${r} 0 1 0 ${148 + r * Math.cos(-Math.PI / 6)},${148 - r * Math.sin(-Math.PI / 6)} Z`}
-        fill="white" transform="rotate(60,148,148)" />
-      <text x="100" y="100" textAnchor="middle" fill="white" fontSize="9" fontFamily="serif" opacity="0.35">Do you see a triangle?</text>
+    <svg
+      viewBox="0 0 200 180"
+      className="w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Kanizsa triangle optical illusion"
+    >
+      <rect width="200" height="180" fill="#111111" />
+
+      {/* Three white disks with triangular wedges removed */}
+      <defs>
+        <mask id="kanizsa-cutouts">
+          <rect width="200" height="180" fill="white" />
+
+          {/* Top wedge faces downward */}
+          <path
+            d="M100 28 L82 59 L118 59 Z"
+            fill="black"
+          />
+
+          {/* Bottom-left wedge faces upper-right */}
+          <path
+            d="M45 145 L79 145 L62 115 Z"
+            fill="black"
+          />
+
+          {/* Bottom-right wedge faces upper-left */}
+          <path
+            d="M155 145 L121 145 L138 115 Z"
+            fill="black"
+          />
+        </mask>
+      </defs>
+
+      <g mask="url(#kanizsa-cutouts)">
+        <circle cx="100" cy="35" r="20" fill="#f5f0e7" />
+        <circle cx="48" cy="140" r="20" fill="#f5f0e7" />
+        <circle cx="152" cy="140" r="20" fill="#f5f0e7" />
+      </g>
+
+      {/* The perceived triangle: no outline is drawn */}
+      <path
+        d="M100 48 L62 117 L138 117 Z"
+        fill="#f5f0e7"
+        opacity="0.13"
+      />
+
+      <text
+        x="100"
+        y="171"
+        textAnchor="middle"
+        fill="#f5f0e7"
+        fontSize="8"
+        opacity="0.55"
+      >
+        Your brain completes the missing edges
+      </text>
     </svg>
   );
 }
+
 
 function HermannGrid() {
   const size = 13; const gap = 6; const cols = 7; const rows = 6;
@@ -91,23 +137,107 @@ function EbbinghausIllusion() {
   );
 }
 
+
 function RubinsVase() {
   return (
-    <svg viewBox="0 0 160 180" className="w-full h-full">
-      <rect width="160" height="180" fill="#1c1917" />
-      {/* White vase shape */}
-      <path d="M80,10 C80,10 105,30 112,60 C120,95 120,110 115,140 C110,165 80,170 80,170 C80,170 50,165 45,140 C40,110 40,95 48,60 C55,30 80,10 80,10 Z" fill="white" />
-      {/* Left face (dark) */}
-      <path d="M0,10 C0,10 55,10 80,10 C105,30 112,60 120,95 C120,110 115,140 110,165 C110,165 80,170 80,170 L0,170 Z" fill="#1c1917" />
-      {/* Right face (dark) */}
-      <path d="M160,10 C160,10 105,10 80,10 C55,30 48,60 40,95 C40,110 45,140 50,165 C50,165 80,170 80,170 L160,170 Z" fill="#1c1917" />
-      {/* Nose bumps for faces */}
-      <path d="M0,10 L45,10 C45,10 35,30 30,50 C27,62 22,72 15,80 C10,88 12,100 15,108 C18,118 28,128 38,135 L0,135 Z" fill="#1c1917" />
-      <path d="M160,10 L115,10 C115,10 125,30 130,50 C133,62 138,72 145,80 C150,88 148,100 145,108 C142,118 132,128 122,135 L160,135 Z" fill="#1c1917" />
-      <text x="80" y="175" textAnchor="middle" fill="white" fontSize="8" fontFamily="serif" opacity="0.45">Vase or two faces?</text>
+    <svg
+      viewBox="0 0 200 200"
+      className="w-full h-full"
+      xmlns="http://www.w3.org/2000/svg"
+      role="img"
+      aria-label="Rubin's vase optical illusion"
+    >
+      <rect width="200" height="200" fill="#1c1917" />
+
+      {/* Central white vase */}
+      <path
+        d="
+          M78 24
+          C78 36 86 43 91 54
+          C96 66 96 76 89 87
+          C82 99 76 111 76 128
+          C76 149 85 166 100 172
+          C115 166 124 149 124 128
+          C124 111 118 99 111 87
+          C104 76 104 66 109 54
+          C114 43 122 36 122 24
+          Z
+        "
+        fill="#f5f0e7"
+      />
+
+      {/* Left profile silhouette */}
+      <path
+        d="
+          M0 24
+          L78 24
+          C78 36 86 43 91 54
+          C86 59 80 61 74 62
+          L69 69
+          L76 74
+          L68 80
+          L73 86
+          C70 96 62 102 54 108
+          C47 115 43 125 44 137
+          C45 151 53 164 66 174
+          L0 174
+          Z
+        "
+        fill="#1c1917"
+      />
+
+      {/* Right profile silhouette */}
+      <path
+        d="
+          M200 24
+          L122 24
+          C122 36 114 43 109 54
+          C114 59 120 61 126 62
+          L131 69
+          L124 74
+          L132 80
+          L127 86
+          C130 96 138 102 146 108
+          C153 115 157 125 156 137
+          C155 151 147 164 134 174
+          L200 174
+          Z
+        "
+        fill="#1c1917"
+      />
+
+      {/* Keep the vase's central silhouette clearly defined */}
+      <path
+        d="
+          M78 24
+          C78 36 86 43 91 54
+          C96 66 96 76 89 87
+          C82 99 76 111 76 128
+          C76 149 85 166 100 172
+          C115 166 124 149 124 128
+          C124 111 118 99 111 87
+          C104 76 104 66 109 54
+          C114 43 122 36 122 24
+        "
+        fill="none"
+        stroke="#f5f0e7"
+        strokeWidth="1"
+      />
+
+      <text
+        x="100"
+        y="190"
+        textAnchor="middle"
+        fill="#f5f0e7"
+        fontSize="9"
+        opacity="0.65"
+      >
+        Vase or two faces?
+      </text>
     </svg>
   );
 }
+
 
 function CafeWall() {
   const rows = [];
